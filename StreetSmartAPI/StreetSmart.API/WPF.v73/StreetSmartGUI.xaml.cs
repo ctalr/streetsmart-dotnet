@@ -70,7 +70,11 @@ namespace StreetSmart.Wpf
     /// </summary>
     public StreetSmartGUI()
     {
-      InitializeComponent();
+      try
+      {
+        InitializeComponent();
+      }
+      catch (System.Exception) { }
     }
 
     #endregion

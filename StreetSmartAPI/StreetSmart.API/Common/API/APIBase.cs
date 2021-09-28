@@ -206,7 +206,11 @@ namespace StreetSmart.Common.API
         {
           _resultTask[funcName] = new TaskCompletionSource<object>();
         }
-
+        
+        // Manual bindings due to newer versions requiring these:
+        Browser.ExecuteScriptAsyncWhenPageLoaded(@"(async function() {await CefSharp.BindObjectAsync('StreetSmartAPIEvents', 'bound');})();");
+        Browser.ExecuteScriptAsyncWhenPageLoaded(@"(async function() {await CefSharp.BindObjectAsync('PanoramaViewerListEvents', 'bound');})();");
+   
         Browser.ExecuteScriptAsync(script);
         await _resultTask[funcName].Task;
         TaskCompletionSource<object> result = _resultTask[funcName];

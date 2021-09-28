@@ -88,6 +88,7 @@
     <ProjectReference Include="..\StreetSmart.API\WPF.v73\StreetSmart.WPF.x64.csproj">
       <Project>{011ec44b-b881-4523-8e5a-f37d47a9edd3}</Project>
       <Name>StreetSmart.WPF.x64</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
